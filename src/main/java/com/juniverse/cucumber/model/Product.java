@@ -1,4 +1,4 @@
-package com.juniverse.cucumber.shop;
+package com.juniverse.cucumber.model;
 
 import java.math.BigDecimal;
 

@@ -1,4 +1,4 @@
-package com.juniverse.cucumber.pricing;
+package com.juniverse.cucumber.service;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -7,6 +7,10 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
 import org.springframework.stereotype.Service;
+import com.juniverse.cucumber.exception.CouponException;
+import com.juniverse.cucumber.model.Customer;
+import com.juniverse.cucumber.model.OrderLine;
+import com.juniverse.cucumber.model.Quote;
 
 /**
  * Reglas de precios de la tienda: la lógica de negocio que las pruebas Cucumber describen.

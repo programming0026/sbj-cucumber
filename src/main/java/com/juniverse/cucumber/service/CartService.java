@@ -1,9 +1,8 @@
-package com.juniverse.cucumber.shop;
+package com.juniverse.cucumber.service;
 
-import com.juniverse.cucumber.pricing.Customer;
-import com.juniverse.cucumber.pricing.OrderLine;
-import com.juniverse.cucumber.pricing.PricingService;
-import com.juniverse.cucumber.pricing.Quote;
+import com.juniverse.cucumber.model.Customer;
+import com.juniverse.cucumber.model.OrderLine;
+import com.juniverse.cucumber.model.Quote;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -12,6 +11,9 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import com.juniverse.cucumber.exception.ShopException;
+import com.juniverse.cucumber.model.Product;
+import com.juniverse.cucumber.repository.ProductCatalog;
 
 /** Carritos de compra: agregar y quitar productos, aplicar un cupón y confirmar la compra. */
 @Service
@@ -160,7 +162,7 @@ public class CartService {
         if (code != null) {
             try {
                 pricing.quote(cart.customer, lines(cart), code);
-            } catch (com.juniverse.cucumber.pricing.CouponException e) {
+            } catch (com.juniverse.cucumber.exception.CouponException e) {
                 throw new ShopException(HttpStatus.UNPROCESSABLE_ENTITY, e.getMessage());
             }
         }

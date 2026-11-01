@@ -1,4 +1,4 @@
-package com.juniverse.cucumber.shop;
+package com.juniverse.cucumber.repository;
 
 import java.math.BigDecimal;
 import java.util.Comparator;
@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import org.springframework.stereotype.Component;
+import com.juniverse.cucumber.model.Product;
 
 /** Catálogo con existencias, en memoria. Las pruebas lo restablecen antes de cada escenario con {@link #reset()}. */
 @Component

@@ -10,8 +10,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 
 import com.jayway.jsonpath.JsonPath;
-import com.juniverse.cucumber.shop.CartService;
-import com.juniverse.cucumber.shop.ProductCatalog;
+import com.juniverse.cucumber.service.CartService;
+import com.juniverse.cucumber.repository.ProductCatalog;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
@@ -100,7 +100,7 @@ public class ApiSteps {
     @Dado("que otro cliente compra {int} unidades de {string}")
     public void otroClienteCompra(int quantity, String sku) {
         // Simula una compra concurrente directamente sobre el servicio: el escenario no necesita saber cómo
-        var other = carts.create(new com.juniverse.cucumber.pricing.Customer("otro", false, false));
+        var other = carts.create(new com.juniverse.cucumber.model.Customer("otro", false, false));
         carts.addItem(other.id(), sku, quantity);
         carts.checkout(other.id());
     }

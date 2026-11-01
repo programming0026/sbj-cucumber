@@ -1,4 +1,4 @@
-package com.juniverse.cucumber.pricing;
+package com.juniverse.cucumber.model;
 
 /**
  * Cliente que compra.

@@ -1,4 +1,4 @@
-package com.juniverse.cucumber.shop;
+package com.juniverse.cucumber.exception;
 
 import java.net.URI;
 import java.util.List;

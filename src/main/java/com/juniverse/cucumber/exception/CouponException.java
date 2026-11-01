@@ -1,4 +1,4 @@
-package com.juniverse.cucumber.pricing;
+package com.juniverse.cucumber.exception;
 
 /** Un cupón no se puede aplicar. El mensaje explica el motivo al cliente. */
 public class CouponException extends RuntimeException {

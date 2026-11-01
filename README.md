@@ -76,8 +76,12 @@ Cada capa tiene su propio runner con su propio *glue* (el paquete donde Cucumber
 
 ```text
 src/main/java/com/juniverse/cucumber/
-├── pricing/        # PricingService: LAS REGLAS que describen las features
-└── shop/           # carritos, catálogo con stock y API REST (CartService, ShopController)
+├── controller/     # ShopController (API REST)
+├── service/        # PricingService: LAS REGLAS que describen las features; CartService (carritos)
+├── repository/     # ProductCatalog (catálogo con stock)
+├── model/          # Product, Customer, OrderLine, Quote
+├── exception/      # CouponException, ShopException, ApiExceptionHandler
+└── config/         # ClockConfig
 
 src/test/resources/
 ├── junit-platform.properties        # Cucumber: sin publicación en la nube, nombres largos, sin paralelismo

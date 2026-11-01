@@ -1,8 +1,8 @@
-package com.juniverse.cucumber.shop;
+package com.juniverse.cucumber.controller;
 
-import com.juniverse.cucumber.pricing.Customer;
-import com.juniverse.cucumber.pricing.OrderLine;
-import com.juniverse.cucumber.pricing.Quote;
+import com.juniverse.cucumber.model.Customer;
+import com.juniverse.cucumber.model.OrderLine;
+import com.juniverse.cucumber.model.Quote;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -19,6 +19,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.juniverse.cucumber.model.Product;
+import com.juniverse.cucumber.repository.ProductCatalog;
+import com.juniverse.cucumber.service.CartService;
 
 /** API REST de la tienda, la que ejercitan los escenarios Cucumber de la capa de integración. */
 @RestController

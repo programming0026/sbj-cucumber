@@ -4,7 +4,7 @@ import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.juniverse.cucumber.shop.ProductCatalog;
+import com.juniverse.cucumber.repository.ProductCatalog;
 
 /** Ganchos de la capa de API: restablecen el estado compartido y dejan evidencia en el informe. */
 public class ApiHooks {

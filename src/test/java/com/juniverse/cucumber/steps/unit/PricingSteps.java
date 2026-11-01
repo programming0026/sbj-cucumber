@@ -5,8 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import com.juniverse.cucumber.pricing.OrderLine;
-import com.juniverse.cucumber.pricing.Quote;
+import com.juniverse.cucumber.model.OrderLine;
+import com.juniverse.cucumber.model.Quote;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;

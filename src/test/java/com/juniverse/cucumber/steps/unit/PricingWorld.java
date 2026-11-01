@@ -1,10 +1,10 @@
 package com.juniverse.cucumber.steps.unit;
 
-import com.juniverse.cucumber.pricing.CouponException;
-import com.juniverse.cucumber.pricing.Customer;
-import com.juniverse.cucumber.pricing.OrderLine;
-import com.juniverse.cucumber.pricing.PricingService;
-import com.juniverse.cucumber.pricing.Quote;
+import com.juniverse.cucumber.exception.CouponException;
+import com.juniverse.cucumber.model.Customer;
+import com.juniverse.cucumber.model.OrderLine;
+import com.juniverse.cucumber.service.PricingService;
+import com.juniverse.cucumber.model.Quote;
 import java.math.BigDecimal;
 import java.time.Clock;
 import java.time.LocalDate;

@@ -1,4 +1,4 @@
-package com.juniverse.cucumber.shop;
+package com.juniverse.cucumber.exception;
 
 import org.springframework.http.HttpStatus;
 
