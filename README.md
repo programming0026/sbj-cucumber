@@ -80,6 +80,7 @@ src/main/java/com/juniverse/cucumber/
 ├── service/        # PricingService: LAS REGLAS que describen las features; CartService (carritos)
 ├── repository/     # ProductCatalog (catálogo con stock)
 ├── model/          # Product, Customer, OrderLine, Quote
+├── dto/            # CreateCartRequest, AddItemRequest, CouponRequest, CartView, ItemView
 ├── exception/      # CouponException, ShopException, ApiExceptionHandler
 └── config/         # ClockConfig
 

@@ -1,12 +1,13 @@
 package com.juniverse.cucumber.controller;
 
+import com.juniverse.cucumber.dto.AddItemRequest;
+import com.juniverse.cucumber.dto.CartView;
+import com.juniverse.cucumber.dto.CouponRequest;
+import com.juniverse.cucumber.dto.CreateCartRequest;
+import com.juniverse.cucumber.dto.ItemView;
 import com.juniverse.cucumber.model.Customer;
 import com.juniverse.cucumber.model.OrderLine;
-import com.juniverse.cucumber.model.Quote;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import java.math.BigDecimal;
 import java.net.URI;
 import java.util.List;
 import java.util.Map;
@@ -27,57 +28,6 @@ import com.juniverse.cucumber.service.CartService;
 @RestController
 @RequestMapping("/api")
 public class ShopController {
-
-    /**
-     * Datos para crear un carrito.
-     *
-     * @param customer cliente
-     * @param vip si es VIP
-     * @param firstPurchase si es su primera compra
-     */
-    public record CreateCartRequest(@NotBlank(message = "El cliente es obligatorio") String customer, boolean vip, boolean firstPurchase) {
-    }
-
-    /**
-     * Producto a agregar.
-     *
-     * @param sku código
-     * @param quantity unidades
-     */
-    public record AddItemRequest(@NotBlank(message = "El producto es obligatorio") String sku, @Min(value = 1, message = "La cantidad mínima es 1") int quantity) {
-    }
-
-    /**
-     * Cupón a aplicar.
-     *
-     * @param code código del cupón
-     */
-    public record CouponRequest(@NotBlank(message = "El cupón es obligatorio") String code) {
-    }
-
-    /**
-     * Línea del carrito para mostrar.
-     *
-     * @param sku código
-     * @param name nombre
-     * @param quantity unidades
-     * @param unitPrice precio unitario
-     * @param lineTotal importe de la línea
-     */
-    public record ItemView(String sku, String name, int quantity, BigDecimal unitPrice, BigDecimal lineTotal) {
-    }
-
-    /**
-     * Carrito para mostrar.
-     *
-     * @param id identificador
-     * @param customer cliente
-     * @param items líneas
-     * @param coupon cupón aplicado
-     * @param quote desglose de precios
-     */
-    public record CartView(String id, String customer, List<ItemView> items, String coupon, Quote quote) {
-    }
 
     private final CartService carts;
     private final ProductCatalog catalog;
